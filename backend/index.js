@@ -21,13 +21,9 @@ app.use(cors());
 app.use('/uploads', express.static(path.join(__dirname, 'Routes', 'uploads')));
 
 
-mongoose
-  .connect("mongodb+srv://abhignasree2006:abhi1301@cluster0.9azzabo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log("DB Connection Error:", err));
+// MongoDB connection disabled for now (will be enabled later)
+// mongoose.connect(process.env.MONGO_URI);
+
 
 
 app.get("/userdetails/:id", async (req, res) => {
